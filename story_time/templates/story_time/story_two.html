@@ -1,0 +1,14 @@
+{% extends 'story_time/base.html' %}
+
+{% block body %}
+<div class="container mt-3">
+  <p class="text-center">Dear School Nurse<br>
+    {{ item.silly_word1 }} {{ item.last_name }} will not be attending school today. He/she has come down with a case of<br>
+    {{ item.illness }} and has horrible {{ item.noun_plural }} and a/an {{ item.adjective1 }} fever. We have made an appointment<br>
+    with the {{ item.adjective2 }} Dr.{{ item.silly_word2 }}, who studied for many years in {{ item.place }} and has {{ item.number }}<br>
+    degrees in pediatrics. He will send you all the information you need. Thank you!<br>
+    Sincerely<br>
+    Mrs.{{ item.adjective3 }}.
+  </p>
+</div>
+{% endblock %}

@@ -3,7 +3,10 @@
 {% block body %}
   <h2 class="text-center">Fun Stories</h2>
   <div class="container">
-    <a href="{% url 'story_time:story_one_form'  %}">story 1</a>
+    <a href="{% url 'story_time:story_one_form' %}">Be Kind</a><br>
+    <a href="{% url 'story_time:story_two_form' %}">Sick Note</a><br>
+    <a href="{% url 'story_time:story_war_form' %}">War</a><br>
+    <a href="{% url 'story_time:story_dragons_form' %}">Dragons</a>
     <hr/>
   </div>
 {% endblock %}

@@ -11,7 +11,7 @@
   <nav class="navbar navbar-dark bg-dark">
     <a href="{% url 'story_time:home' %}" class="navbar-brand">Home</a>
     <div class="navbar">
-{#      <a href="#" class="nav-item nav-link">put something here</a>#}
+      <a href="{% url 'story_time:all_stories' %}" class="nav-item nav-link">All Stories</a>
     </div>
   </nav>
 {% block body %}

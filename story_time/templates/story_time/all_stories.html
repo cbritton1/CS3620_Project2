@@ -1,0 +1,23 @@
+{% extends 'story_time/base.html' %}
+
+{% block body %}
+  <h1 class="text-center">Your Stories</h1>
+  <div class="ml-3 mt-4">
+  <h3>Be Kind Stories</h3>
+    {% for story in story_list1 %}
+      <a href="{% url 'story_time:story_one' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+    <h3>Sick Note Stories</h3>
+    {% for story in story_list2 %}
+      <a href="{% url 'story_time:story_two' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+    <h3>War Stories</h3>
+    {% for story in story_list3 %}
+      <a href="{% url 'story_time:story_war' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  <h3>Dragon Stories</h3>
+    {% for story in story_list4 %}
+      <a href="{% url 'story_time:story_dragons' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  </div>
+{% endblock %}
