@@ -55,3 +55,38 @@ class StoryDragons(models.Model):
     adjective3 = models.CharField(max_length=200)
     adjective4 = models.CharField(max_length=200)
 
+
+class StoryWalmart(models.Model):
+    story_name = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    adjective1 = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    adjective2 = models.CharField(max_length=200)
+    verb2 = models.CharField(max_length=200)
+    verb3 = models.CharField(max_length=200)
+    number = models.IntegerField()
+    adjective3 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)
+    noun4 = models.CharField(max_length=200)
+    relative = models.CharField(max_length=200)
+    adjective4 = models.CharField(max_length=200)
+    adjective5 = models.CharField(max_length=200)
+    noun5 = models.CharField(max_length=200)
+
+
+class StoryLoveLetter(models.Model):
+    story_name = models.CharField(max_length=200)
+    person = models.CharField(max_length=200)
+    adjective1 = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    part_of_the_body = models.CharField(max_length=200)
+    number = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    adverb = models.CharField(max_length=200)
+    verb2 = models.CharField(max_length=200)
+    pronoun1 = models.CharField(max_length=200)
+    person2 = models.CharField(max_length=200)
+
+
+

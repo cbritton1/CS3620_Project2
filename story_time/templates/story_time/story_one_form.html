@@ -1,9 +1,0 @@
-{% extends 'story_time/base.html' %}
-
-{% block body %}
-  <form method="POST">
-    {% csrf_token %}
-    {{ form }}
-    <button type="submit">Generate Story</button>
-  </form>
-{% endblock %}
