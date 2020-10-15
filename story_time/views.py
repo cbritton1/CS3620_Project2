@@ -38,8 +38,14 @@ def story_one_form(request,):
 
     if form.is_valid():
         form.save()
-        return redirect('story_time:all_stories')
-    return render(request, 'story_time/story_one_form.html', {'form': form})
+        story_list = StoryOne.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = StoryOne.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_one.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
 
 
 def story_two_form(request,):
@@ -47,8 +53,14 @@ def story_two_form(request,):
 
     if form.is_valid():
         form.save()
-        return redirect('story_time:all_stories')
-    return render(request, 'story_time/story_one_form.html', {'form': form})
+        story_list = StoryTwo.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = StoryTwo.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_two.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
 
 
 def story_war_form(request,):
@@ -56,8 +68,14 @@ def story_war_form(request,):
 
     if form.is_valid():
         form.save()
-        return redirect('story_time:all_stories')
-    return render(request, 'story_time/story_one_form.html', {'form': form})
+        story_list = StoryWar.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = StoryWar.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_war.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
 
 
 def story_dragons_form(request):
@@ -65,8 +83,14 @@ def story_dragons_form(request):
 
     if form.is_valid():
         form.save()
-        return redirect('story_time:all_stories')
-    return render(request, 'story_time/story_one_form.html', {'form': form})
+        story_list = StoryDragons.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = StoryDragons.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_dragons.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
 
 
 def all_stories(request):
