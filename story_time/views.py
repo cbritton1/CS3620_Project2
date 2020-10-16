@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import StoryOneForm, StoryTwoForm, StoryWarForm, StoryDragonsForm, StoryWalmartForm,\
-    StoryLoveLetterForm, StorySmellyCatForm
+    StoryLoveLetterForm, StorySmellyCatForm, StoryGreetingsEarthlingsForm
 from .models import StoryOne, StoryTwo, StoryWar, StoryDragons, StoryWalmart, StoryLoveLetter,\
-    StorySmellyCat
+    StorySmellyCat, StoryGreetingsEarthlings
 
 
 # Create your views here.
@@ -48,6 +48,11 @@ def story_love_letter(request, item_id):
 def story_smelly_cat(request, item_id):
     item = StorySmellyCat.objects.get(pk=item_id)
     return render(request, 'story_time/story_smelly_cat.html', {'item': item})
+
+
+def story_greeting_earthlings(request, item_id):
+    item = StoryGreetingsEarthlings.objects.get(pk=item_id)
+    return render(request, 'story_time/story_greeting_earthlings.html', {'item': item})
 
 
 def story_one_form(request,):
@@ -155,6 +160,21 @@ def story_smelly_cat_form(request):
     return render(request, 'story_time/story_form.html', {'form': form})
 
 
+def story_greeting_earthlings_form(request):
+    form = StoryGreetingsEarthlingsForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = StoryGreetingsEarthlings.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = StoryGreetingsEarthlings.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_greeting_earthlings.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
 def all_stories(request):
     story_list1 = StoryOne.objects.all()
     story_list2 = StoryTwo.objects.all()
@@ -163,6 +183,7 @@ def all_stories(request):
     story_list5 = StoryWalmart.objects.all()
     story_list6 = StoryLoveLetter.objects.all()
     story_list7 = StoryLoveLetter.objects.all()
+    story_list8 = StoryLoveLetter.objects.all()
     context = {
         'story_list1': story_list1,
         'story_list2': story_list2,
@@ -171,6 +192,7 @@ def all_stories(request):
         'story_list5': story_list5,
         'story_list6': story_list6,
         'story_list7': story_list7,
+        'story_list8': story_list8,
     }
     return render(request, 'story_time/all_stories.html', context)
 

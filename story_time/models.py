@@ -106,4 +106,14 @@ class StorySmellyCat(models.Model):
     noun4 = models.CharField(max_length=200)
 
 
+class StoryGreetingsEarthlings(models.Model):
+    story_name = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    occupation = models.CharField(max_length=200)
+    animal = models.CharField(max_length=200)
+    place = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+
+
 

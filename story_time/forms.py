@@ -1,6 +1,6 @@
 from django import forms
 from .models import StoryOne, StoryTwo, StoryWar, StoryDragons, StoryWalmart, StoryLoveLetter,\
-    StorySmellyCat
+    StorySmellyCat, StoryGreetingsEarthlings
 
 
 class StoryOneForm(forms.ModelForm):
@@ -62,3 +62,10 @@ class StorySmellyCatForm(forms.ModelForm):
                   'animal2', 'noun2', 'noun3', 'relationship', 'body_part', 'verb3', 'noun4']
         labels = {'story_name': 'Name your story', 'verb1': 'Verb ending in "ing"', 'noun3': 'Noun(Plural)',
                   'body_part': 'Body part(Plural)', 'verb3': 'Verb ending in "ing"'}
+
+
+class StoryGreetingsEarthlingsForm(forms.ModelForm):
+    class Meta:
+        model = StoryGreetingsEarthlings
+        fields = ['story_name', 'occupation', 'animal', 'place', 'verb1', 'noun2']
+        labels = {'story_name': 'Name your story', 'animal': 'Animal(Plural)'}
