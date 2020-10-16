@@ -27,5 +27,9 @@
     {% for story in story_list6 %}
       <a href="{% url 'story_time:story_love_letter' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+    <h3>Smelly Cat</h3>
+    {% for story in story_list7 %}
+      <a href="{% url 'story_time:story_smelly_cat' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
   </div>
 {% endblock %}

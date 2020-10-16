@@ -89,4 +89,21 @@ class StoryLoveLetter(models.Model):
     person2 = models.CharField(max_length=200)
 
 
+class StorySmellyCat(models.Model):
+    story_name = models.CharField(max_length=200)
+    animal = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    verb2 = models.CharField(max_length=200)
+    occupation = models.CharField(max_length=200)
+    adjective1 = models.CharField(max_length=200)
+    animal2 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)
+    relationship = models.CharField(max_length=200)
+    body_part = models.CharField(max_length=200)
+    verb3 = models.CharField(max_length=200)
+    noun4 = models.CharField(max_length=200)
+
+
 
