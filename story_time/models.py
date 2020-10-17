@@ -156,3 +156,53 @@ class PizzaParlor(models.Model):
     verb1 = models.CharField(max_length=200)
     liquid = models.CharField(max_length=200)
     noun3 = models.CharField(max_length=200)
+
+
+class CatAndTheFiddle(models.Model):
+    story_name = models.CharField(max_length=200)
+    silly_word = models.CharField(max_length=200)
+    animal = models.CharField(max_length=200)
+    musical_instrument = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    adjective1 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+
+
+class Baseball(models.Model):
+    story_name = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    occupation = models.CharField(max_length=200)
+    number = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    verb2 = models.CharField(max_length=200)
+    adjective = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)
+    noun4 = models.CharField(max_length=200)
+
+
+class JJRTolkien(models.Model):
+    story_name = models.CharField(max_length=200)
+    fruit = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)
+    noun4 = models.CharField(max_length=200)
+    noun5 = models.CharField(max_length=200)
+    noun6 = models.CharField(max_length=200)
+    silly_word = models.CharField(max_length=200)
+
+
+class JackAndJill(models.Model):
+    story_name = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    liquid = models.CharField(max_length=200)
+    verb2ing = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    verb3ing = models.CharField(max_length=200)
+    verb4 = models.CharField(max_length=200)
+    adjective1 = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)
+    adjective2 = models.CharField(max_length=200)

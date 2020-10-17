@@ -1,0 +1,15 @@
+{% extends 'story_time/base.html' %}
+
+{% block body %}
+<div class="container mt-3">
+  <h3 class="text-center">Baseball</h3>
+  <p class="text-center">
+    {{ item.noun1 }} is a very exciting sport. Whether you are {{ item.verb1 }} the ball with a<br>
+    {{ item.noun2 }}, or you are the {{ item.occupation }} and striking out {{ item.number }}batters in a<br>
+    row, you`ll be having fun. You can also be the catcher, standing at {{ item.location }} plate,<br>
+    ready to {{ item.verb2 }} the next person as he tries to make it {{ item.location }}. But the best part<br>
+    of it is when someone hits a {{ item.adjective }} slam when all the {{ item.noun3 }} are loaded<br>
+    during the last {{ item.noun4 }} to win the game.
+  </p>
+</div>
+{% endblock %}

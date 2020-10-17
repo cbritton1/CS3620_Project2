@@ -67,6 +67,31 @@
     <h3>Pizza Parlor</h3>
     {% for story in story_list11 %}
       <a href="{% url 'story_time:story_pizza_parlor' story.id %}">{{ story.story_name }}</a><br>
+      <br>
+    {% endfor %}
+  {% endif %}
+  {% if story_list12 %}
+    <h3>The Cat And The Fiddle</h3>
+    {% for story in story_list12 %}
+      <a href="{% url 'story_time:story_cat_and_the_fiddle' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  {% endif %}
+  {% if story_list13 %}
+    <h3>Baseball</h3>
+    {% for story in story_list13 %}
+      <a href="{% url 'story_time:story_baseball' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  {% endif %}
+  {% if story_list14 %}
+    <h3>J.J.R. Tolkien</h3>
+    {% for story in story_list14 %}
+      <a href="{% url 'story_time:story_JJRTolkien' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  {% endif %}
+  {% if story_list15 %}
+    <h3>J.J.R. Tolkien</h3>
+    {% for story in story_list15 %}
+      <a href="{% url 'story_time:story_jack_and_jill' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
   {% endif %}
   </div>

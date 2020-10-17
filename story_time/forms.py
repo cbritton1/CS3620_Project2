@@ -1,6 +1,7 @@
 from django import forms
 from .models import StoryOne, StoryTwo, StoryWar, StoryDragons, StoryWalmart, StoryLoveLetter,\
-    StorySmellyCat, StoryGreetingsEarthlings, HailToTheChief, HolidayFestivities, PizzaParlor
+    StorySmellyCat, StoryGreetingsEarthlings, HailToTheChief, HolidayFestivities, PizzaParlor, CatAndTheFiddle,\
+    Baseball, JJRTolkien, JackAndJill
 
 
 class StoryOneForm(forms.ModelForm):
@@ -96,3 +97,34 @@ class PizzaParlorForm(forms.ModelForm):
                   'noun3']
         labels = {'story_name': 'Name your story', 'food': 'Food(Plural)', 'noun2': 'Noun(Plural)',
                   'verb1': 'Verb ending in "ing"'}
+
+
+class CatAndTheFiddleForm(forms.ModelForm):
+    class Meta:
+        model = CatAndTheFiddle
+        fields = ['story_name', 'silly_word', 'animal', 'musical_instrument', 'noun1', 'adjective1', 'noun2']
+        labels = {'story_name': 'Name your story'}
+
+
+class BaseballForm(forms.ModelForm):
+    class Meta:
+        model = Baseball
+        fields = ['story_name', 'noun1', 'noun2', 'noun3', 'verb1', 'verb2', 'occupation', 'number', 'location',
+                  'adjective', 'noun4']
+        labels = {'story_name': 'Name your story', 'verb1': 'verb ending in "ing"', 'noun3': 'Noun(Plural)'}
+
+
+class JJRTolkienForm(forms.ModelForm):
+    class Meta:
+        model = JJRTolkien
+        fields = ['story_name', 'fruit', 'noun1', 'noun2', 'noun3', 'noun4', 'noun5', 'noun6', 'silly_word']
+        labels = {'story_name': 'Name your story', 'noun1': 'Noun(Plural)', 'noun5': 'Noun(Plural)'}
+
+
+class JackAndJillForm(forms.ModelForm):
+    class Meta:
+        model = JackAndJill
+        fields = ['story_name', 'noun1', 'verb1', 'liquid', 'verb2ing', 'noun2', 'verb3ing', 'verb4', 'adjective1',
+                  'noun3', 'adjective2']
+        labels = {'story_name': 'Name your story', 'verb2ing': 'Verb ending in "ing"',
+                  'verb3ing': 'Verb ending in "ing"'}

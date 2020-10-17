@@ -1,0 +1,19 @@
+{% extends 'story_time/base.html' %}
+
+{% block body %}
+<div class="container mt-3">
+  <h3 class="text-center">Jack And Jil</h3>
+  <p class="text-center">
+    Jack and Jill went up the {{ item.noun1 }},<br>
+    To {{ item.verb1 }} a pail of {{ item.liquid }};<br>
+    Jack {{ item.verb2ing }} down, and broke his {{ item.noun2 }},<br>
+    And Jill came {{ item.verb3ing }} after.<br><br>
+
+    Then up Jack got and off did {{ item.verb4 }},<br>
+    As {{ item.adjective1 }} as he could caper,<br>
+    To old Dame Dob, who patched his {{ item.noun2 }}<br>
+    With {{ item.noun3 }} and {{ item.adjective2 }} paper.
+
+  </p>
+</div>
+{% endblock %}

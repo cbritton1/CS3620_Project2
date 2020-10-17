@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import StoryOneForm, StoryTwoForm, StoryWarForm, StoryDragonsForm, StoryWalmartForm,\
     StoryLoveLetterForm, StorySmellyCatForm, StoryGreetingsEarthlingsForm, HailToTheChiefForm, HolidayFestivitiesForm,\
-    PizzaParlorForm, PizzaParlor
+    PizzaParlorForm, PizzaParlor, CatAndTheFiddle, CatAndTheFiddleForm, Baseball, BaseballForm, JJRTolkien,\
+    JJRTolkienForm, JackAndJill, JackAndJillForm
 from .models import StoryOne, StoryTwo, StoryWar, StoryDragons, StoryWalmart, StoryLoveLetter,\
     StorySmellyCat, StoryGreetingsEarthlings, HailToTheChief, HolidayFestivities
 
@@ -69,6 +70,26 @@ def story_holiday_festivities(request, item_id):
 def story_pizza_parlor(request, item_id):
     item = PizzaParlor.objects.get(pk=item_id)
     return render(request, 'story_time/story_pizza_parlor.html', {'item': item})
+
+
+def story_cat_and_the_fiddle(request, item_id):
+    item = CatAndTheFiddle.objects.get(pk=item_id)
+    return render(request, 'story_time/story_cat_and_the_fiddle.html', {'item': item})
+
+
+def story_baseball(request, item_id):
+    item = Baseball.objects.get(pk=item_id)
+    return render(request, 'story_time/story_baseball.html', {'item': item})
+
+
+def story_JJRTolkien(request, item_id):
+    item = Baseball.objects.get(pk=item_id)
+    return render(request, 'story_time/story_JJRTolkien.html', {'item': item})
+
+
+def story_jack_and_jill(request, item_id):
+    item = JackAndJill.objects.get(pk=item_id)
+    return render(request, 'story_time/story_jack_and_jill.html', {'item': item})
 
 
 def story_one_form(request,):
@@ -236,6 +257,66 @@ def story_pizza_parlor_form(request):
     return render(request, 'story_time/story_form.html', {'form': form})
 
 
+def story_cat_and_the_fiddle_form(request):
+    form = CatAndTheFiddleForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = CatAndTheFiddle.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = CatAndTheFiddle.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_cat_and_the_fiddle.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
+def story_baseball_form(request):
+    form = BaseballForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = Baseball.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = Baseball.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_baseball.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
+def story_JJRTolkien_form(request):
+    form = JJRTolkienForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = JJRTolkien.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = JJRTolkien.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_JJRTolkien.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
+def story_jack_and_jill_form(request):
+    form = JackAndJillForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = JackAndJill.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = JackAndJill.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_jack_and_jill.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
 def all_stories(request):
     story_list1 = StoryOne.objects.all()
     story_list2 = StoryTwo.objects.all()
@@ -248,6 +329,10 @@ def all_stories(request):
     story_list9 = HailToTheChief.objects.all()
     story_list10 = HolidayFestivities.objects.all()
     story_list11 = PizzaParlor.objects.all()
+    story_list12 = CatAndTheFiddle.objects.all()
+    story_list13 = Baseball.objects.all()
+    story_list14 = JJRTolkien.objects.all()
+    story_list15 = JackAndJill.objects.all()
     context = {
         'story_list1': story_list1,
         'story_list2': story_list2,
@@ -260,6 +345,10 @@ def all_stories(request):
         'story_list9': story_list9,
         'story_list10': story_list10,
         'story_list11': story_list11,
+        'story_list12': story_list12,
+        'story_list13': story_list13,
+        'story_list14': story_list14,
+        'story_list15': story_list15,
     }
     return render(request, 'story_time/all_stories.html', context)
 
