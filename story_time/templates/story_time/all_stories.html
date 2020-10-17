@@ -3,37 +3,71 @@
 {% block body %}
   <h1 class="text-center">Your Stories</h1>
   <div class="ml-3 mt-4">
+  {% if story_list1 %}
   <h3>Be Kind Stories</h3>
     {% for story in story_list1 %}
       <a href="{% url 'story_time:story_one' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list2 %}
     <h3>Sick Note Stories</h3>
     {% for story in story_list2 %}
       <a href="{% url 'story_time:story_two' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list3 %}
     <h3>War Stories</h3>
     {% for story in story_list3 %}
       <a href="{% url 'story_time:story_war' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list4 %}
   <h3>Dragon Stories</h3>
     {% for story in story_list4 %}
       <a href="{% url 'story_time:story_dragons' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list5 %}
     <h3>The Walmart Difference Stories</h3>
     {% for story in story_list5 %}
       <a href="{% url 'story_time:story_walmart' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list6 %}
     <h3>Love Letter</h3>
     {% for story in story_list6 %}
       <a href="{% url 'story_time:story_love_letter' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list7 %}
     <h3>Smelly Cat</h3>
     {% for story in story_list7 %}
       <a href="{% url 'story_time:story_smelly_cat' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list8 %}
     <h3>Greeting Earthlings</h3>
     {% for story in story_list8 %}
       <a href="{% url 'story_time:story_greeting_earthlings' story.id %}">{{ story.story_name }}</a><br>
     {% endfor %}
+  {% endif %}
+  {% if story_list9 %}
+    <h3>Hail To The Chief</h3>
+    {% for story in story_list9 %}
+      <a href="{% url 'story_time:story_hail_to_the_chief' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  {% endif %}
+  {% if story_list10 %}
+    <h3>Holiday Festivities</h3>
+    {% for story in story_list10 %}
+      <a href="{% url 'story_time:story_holiday_festivities' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  {% endif %}
+  {% if story_list11 %}
+    <h3>Pizza Parlor</h3>
+    {% for story in story_list11 %}
+      <a href="{% url 'story_time:story_pizza_parlor' story.id %}">{{ story.story_name }}</a><br>
+    {% endfor %}
+  {% endif %}
   </div>
 {% endblock %}

@@ -116,4 +116,43 @@ class StoryGreetingsEarthlings(models.Model):
     noun2 = models.CharField(max_length=200)
 
 
+class HailToTheChief(models.Model):
+    story_name = models.CharField(max_length=200)
+    place = models.CharField(max_length=200)
+    time = models.CharField(max_length=200)
+    adjective1 = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)
+    noun4 = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    verb2 = models.CharField(max_length=200)
+    occupation = models.CharField(max_length=200)
 
+
+class HolidayFestivities(models.Model):
+    story_name = models.CharField(max_length=200)
+    month = models.CharField(max_length=200)
+    number = models.IntegerField()
+    holiday = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    verb2 = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)
+    noun4 = models.CharField(max_length=200)
+    noun5 = models.CharField(max_length=200)
+    occupation = models.CharField(max_length=200)
+
+
+class PizzaParlor(models.Model):
+    story_name = models.CharField(max_length=200)
+    male_name = models.CharField(max_length=200)
+    adjective1 = models.CharField(max_length=200)
+    noun1 = models.CharField(max_length=200)
+    adjective2 = models.CharField(max_length=200)
+    food = models.CharField(max_length=200)
+    noun2 = models.CharField(max_length=200)
+    verb1 = models.CharField(max_length=200)
+    liquid = models.CharField(max_length=200)
+    noun3 = models.CharField(max_length=200)

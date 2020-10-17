@@ -1,9 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .forms import StoryOneForm, StoryTwoForm, StoryWarForm, StoryDragonsForm, StoryWalmartForm,\
-    StoryLoveLetterForm, StorySmellyCatForm, StoryGreetingsEarthlingsForm
+    StoryLoveLetterForm, StorySmellyCatForm, StoryGreetingsEarthlingsForm, HailToTheChiefForm, HolidayFestivitiesForm,\
+    PizzaParlorForm, PizzaParlor
 from .models import StoryOne, StoryTwo, StoryWar, StoryDragons, StoryWalmart, StoryLoveLetter,\
-    StorySmellyCat, StoryGreetingsEarthlings
+    StorySmellyCat, StoryGreetingsEarthlings, HailToTheChief, HolidayFestivities
 
 
 # Create your views here.
@@ -53,6 +54,21 @@ def story_smelly_cat(request, item_id):
 def story_greeting_earthlings(request, item_id):
     item = StoryGreetingsEarthlings.objects.get(pk=item_id)
     return render(request, 'story_time/story_greeting_earthlings.html', {'item': item})
+
+
+def story_hail_to_the_chief(request, item_id):
+    item = HailToTheChief.objects.get(pk=item_id)
+    return render(request, 'story_time/story_hail_to_the_chief.html', {'item': item})
+
+
+def story_holiday_festivities(request, item_id):
+    item = HailToTheChief.objects.get(pk=item_id)
+    return render(request, 'story_time/story_holiday_festivities.html', {'item': item})
+
+
+def story_pizza_parlor(request, item_id):
+    item = PizzaParlor.objects.get(pk=item_id)
+    return render(request, 'story_time/story_pizza_parlor.html', {'item': item})
 
 
 def story_one_form(request,):
@@ -175,6 +191,51 @@ def story_greeting_earthlings_form(request):
     return render(request, 'story_time/story_form.html', {'form': form})
 
 
+def story_hail_to_the_chief_form(request):
+    form = HailToTheChiefForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = HailToTheChief.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = HailToTheChief.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_hail_to_the_chief.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
+def story_holiday_festivities_form(request):
+    form = HolidayFestivitiesForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = HolidayFestivities.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = HolidayFestivities.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_holiday_festivities.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
+def story_pizza_parlor_form(request):
+    form = PizzaParlorForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        story_list = PizzaParlor.objects.all()
+        x = len(story_list)
+        story = story_list[x-1]
+        last_story = story.id
+        item = PizzaParlor.objects.get(pk=last_story)
+        context = {'item': item}
+        return render(request, 'story_time/story_pizza_parlor.html', context)
+    return render(request, 'story_time/story_form.html', {'form': form})
+
+
 def all_stories(request):
     story_list1 = StoryOne.objects.all()
     story_list2 = StoryTwo.objects.all()
@@ -182,8 +243,11 @@ def all_stories(request):
     story_list4 = StoryDragons.objects.all()
     story_list5 = StoryWalmart.objects.all()
     story_list6 = StoryLoveLetter.objects.all()
-    story_list7 = StoryLoveLetter.objects.all()
-    story_list8 = StoryLoveLetter.objects.all()
+    story_list7 = StorySmellyCat.objects.all()
+    story_list8 = StoryGreetingsEarthlings.objects.all()
+    story_list9 = HailToTheChief.objects.all()
+    story_list10 = HolidayFestivities.objects.all()
+    story_list11 = PizzaParlor.objects.all()
     context = {
         'story_list1': story_list1,
         'story_list2': story_list2,
@@ -193,6 +257,9 @@ def all_stories(request):
         'story_list6': story_list6,
         'story_list7': story_list7,
         'story_list8': story_list8,
+        'story_list9': story_list9,
+        'story_list10': story_list10,
+        'story_list11': story_list11,
     }
     return render(request, 'story_time/all_stories.html', context)
 

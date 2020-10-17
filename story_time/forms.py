@@ -1,6 +1,6 @@
 from django import forms
 from .models import StoryOne, StoryTwo, StoryWar, StoryDragons, StoryWalmart, StoryLoveLetter,\
-    StorySmellyCat, StoryGreetingsEarthlings
+    StorySmellyCat, StoryGreetingsEarthlings, HailToTheChief, HolidayFestivities, PizzaParlor
 
 
 class StoryOneForm(forms.ModelForm):
@@ -69,3 +69,30 @@ class StoryGreetingsEarthlingsForm(forms.ModelForm):
         model = StoryGreetingsEarthlings
         fields = ['story_name', 'occupation', 'animal', 'place', 'verb1', 'noun2']
         labels = {'story_name': 'Name your story', 'animal': 'Animal(Plural)'}
+
+
+class HailToTheChiefForm(forms.ModelForm):
+    class Meta:
+        model = HailToTheChief
+        fields = ['story_name', 'place', 'time', 'adjective1', 'noun1', 'noun2', 'noun3',
+                  'noun4', 'verb1', 'verb2', 'occupation']
+        labels = {'story_name': 'Name your story', 'time': 'Amount of time', 'noun3': 'Noun(Plural)',
+                  'noun4': 'Noun(Plural)'}
+
+
+class HolidayFestivitiesForm(forms.ModelForm):
+    class Meta:
+        model = HolidayFestivities
+        fields = ['story_name', 'month', 'number', 'holiday', 'noun1', 'noun2', 'noun3', 'noun4', 'noun5',
+                  'verb1', 'verb2', 'occupation']
+        labels = {'story_name': 'Name your story', 'noun1': 'Noun(Plural)', 'verb1': 'Verb ending in "ing"',
+                  'noun2': 'Noun(Plural)'}
+
+
+class PizzaParlorForm(forms.ModelForm):
+    class Meta:
+        model = PizzaParlor
+        fields = ['story_name', 'male_name', 'adjective1', 'noun1', 'adjective2', 'food', 'noun2', 'verb1', 'liquid',
+                  'noun3']
+        labels = {'story_name': 'Name your story', 'food': 'Food(Plural)', 'noun2': 'Noun(Plural)',
+                  'verb1': 'Verb ending in "ing"'}
